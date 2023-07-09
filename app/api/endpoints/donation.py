@@ -53,10 +53,10 @@ async def get_user_donations(
 async def get_all_donations(
         session: AsyncSession = Depends(get_async_session),
 ):
-    """
-    Только для суперюзеров.
+    """Только для суперюзеров.
 
     Возвращает список всех пожертвований.
+
     """
     all_donations = await donation_crud.get_multi(session)
     return all_donations
